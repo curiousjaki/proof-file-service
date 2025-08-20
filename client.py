@@ -3,7 +3,7 @@ import streaming_pb2
 import streaming_pb2_grpc
 
 UPLOAD_FILE_PATH = 'proofs/10mibfile.receipt'
-DOWNLOAD_FILE = 'e5b844cc57f57094ea4585e235f36c78c1cd222262bb89d53c94dcb4d6b3e55d.receipt'
+DOWNLOAD_FILE = '10mibfile.receipt'
 DOWNLOAD_FILE_PATH = 'proofs/e5b844cc57f57094ea4585e235f36c78c1cd222262bb89d53c94dcb4d6b3e55d.receipt'
 
 def upload_file(stub):

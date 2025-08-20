@@ -33,6 +33,7 @@ class FileStreamingServiceServicer(streaming_pb2_grpc.FileStreamingServiceServic
 
         if not os.path.exists(file_path):
             context.abort(grpc.StatusCode.NOT_FOUND, 'File not found.')
+        print("Streaming file:", file_path)
 
         with open(file_path, 'rb') as file:
             while chunk := file.read(4096):
@@ -64,8 +65,8 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     streaming_pb2_grpc.add_FileStreamingServiceServicer_to_server(
         FileStreamingServiceServicer(), server)
-    server.add_insecure_port('[::]:50051')
-    print("Server is running on port 50051...")
+    server.add_insecure_port('[::]:50052')
+    print("Server is running on port 50052...")
     server.start()
     server.wait_for_termination()
 
